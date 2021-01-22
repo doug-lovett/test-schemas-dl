@@ -22,7 +22,7 @@ import json
 
 from flask import g
 
-from registry_schemas import get_schema_store, validate
+from registry_schemas import get_schema_store, validate as schema_validate
 
 
 class SchemaServices():
@@ -73,9 +73,9 @@ class SchemaServices():
 
     def validate(self, json_data: json, schema_id: str, app_id: str):
         """Return the outcome of the util.validate function."""
-        return validate(json_data=json_data,
-                        schema_id=schema_id,
-                        app_id=app_id,
-                        schema_store=self.rsbc_schema_store,
-                        validate_schema=False,
-                        schema_search_path=None
+        return schema_validate(json_data=json_data,
+                               schema_id=schema_id,
+                               app_id=app_id,
+                               schema_store=self.rsbc_schema_store,
+                               validate_schema=False,
+                               schema_search_path=None)
