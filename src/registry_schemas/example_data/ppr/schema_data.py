@@ -577,6 +577,7 @@ FINANCING_STATEMENT = {
 
 FINANCING_STATEMENT_HISTORY = [
   {
+    'matchType': 'EXACT',
     'financingStatement': {
       'type': 'SA',
       'clientReferenceId': 'A-00000402',
@@ -885,6 +886,7 @@ SEARCH_DETAIL_RESULT = {
   },
   'details': [
     {
+      'matchType': 'EXACT',
       'financingStatement': {
         'type': 'SA',
         'clientReferenceId': 'A-00000402',

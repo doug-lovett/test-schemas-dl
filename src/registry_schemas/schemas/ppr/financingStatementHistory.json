@@ -7,6 +7,12 @@
         "financingStatementHistory": {
             "type": "object",
             "properties": {
+                "matchType": {
+                    "type": "string",
+                    "maxLength": 10,
+                    "enum": ["SIMILAR", "EXACT"],
+                    "description": "Specifies how closely the Financing Statement matches the query criteria."
+                },
                 "financingStatement": {
                     "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/ppr/financingStatement"
                 },
@@ -32,6 +38,7 @@
                 }
             },
             "required": [
+                "matchType",
                 "financingStatement"
             ]
         }
